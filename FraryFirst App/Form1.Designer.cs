@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.lblTitle = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtDice1 = new System.Windows.Forms.TextBox();
+            this.lstOut = new System.Windows.Forms.ListBox();
+            this.btnDisplay = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnQuit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -41,11 +47,69 @@
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Test Application";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(43, 88);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Dice 1";
+            // 
+            // txtDice1
+            // 
+            this.txtDice1.Location = new System.Drawing.Point(139, 88);
+            this.txtDice1.Name = "txtDice1";
+            this.txtDice1.Size = new System.Drawing.Size(100, 20);
+            this.txtDice1.TabIndex = 2;
+            // 
+            // lstOut
+            // 
+            this.lstOut.FormattingEnabled = true;
+            this.lstOut.Location = new System.Drawing.Point(46, 135);
+            this.lstOut.Name = "lstOut";
+            this.lstOut.Size = new System.Drawing.Size(604, 95);
+            this.lstOut.TabIndex = 3;
+            // 
+            // btnDisplay
+            // 
+            this.btnDisplay.Location = new System.Drawing.Point(62, 278);
+            this.btnDisplay.Name = "btnDisplay";
+            this.btnDisplay.Size = new System.Drawing.Size(75, 23);
+            this.btnDisplay.TabIndex = 4;
+            this.btnDisplay.Text = "&Display";
+            this.btnDisplay.UseVisualStyleBackColor = true;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(282, 278);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 5;
+            this.btnClear.Text = "&Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            // 
+            // btnQuit
+            // 
+            this.btnQuit.Location = new System.Drawing.Point(575, 278);
+            this.btnQuit.Name = "btnQuit";
+            this.btnQuit.Size = new System.Drawing.Size(75, 23);
+            this.btnQuit.TabIndex = 6;
+            this.btnQuit.Text = "&Quit";
+            this.btnQuit.UseVisualStyleBackColor = true;
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(742, 351);
+            this.Controls.Add(this.btnQuit);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnDisplay);
+            this.Controls.Add(this.lstOut);
+            this.Controls.Add(this.txtDice1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTitle);
             this.Name = "Form1";
             this.Text = "Test App";
@@ -57,6 +121,12 @@
         #endregion
 
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtDice1;
+        private System.Windows.Forms.ListBox lstOut;
+        private System.Windows.Forms.Button btnDisplay;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnQuit;
     }
 }
 
