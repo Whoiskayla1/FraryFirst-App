@@ -135,7 +135,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTitle);
             this.Name = "Form1";
-            this.Text = "Test App";
+            this.Text = "Test App by Barbara Frary";
             this.ResumeLayout(false);
             this.PerformLayout();
 

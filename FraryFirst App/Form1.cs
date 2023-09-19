@@ -36,14 +36,14 @@ namespace FraryFirst_App
             lstOut.Items.Add("Dice 2 is " + txtDice2.Text);
             //generally I don't want you to combine your processing and output
             double d1p = 0;
-           // double d2p = 0;
+            double d2p = 0;
             d1p = (double) dice1 / total;
-
+            d2p = (double)dice2 / total;
             /* C for currency, D for date and T for time */
 
             lstOut.Items.Add("Total = " + total.ToString("N0"));
             lstOut.Items.Add(d1p.ToString("P"));
-
+            lstOut.Items.Add(d2p.ToString("P"));
         }
 
         private void btnClear_Click(object sender, EventArgs e)
