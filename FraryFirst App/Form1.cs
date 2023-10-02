@@ -25,7 +25,7 @@ namespace FraryFirst_App
         private void btnDisplay_Click(object sender, EventArgs e)
         {
             //input
-            txtDice1.Text = "1";
+            //  txtDice1.Text = "1";
             txtDice2.ForeColor = Color.CadetBlue;
 
             int dice1 = int.Parse(txtDice1.Text);
@@ -44,6 +44,8 @@ namespace FraryFirst_App
             lstOut.Items.Add("Total = " + total.ToString("N0"));
             lstOut.Items.Add(d1p.ToString("P"));
             lstOut.Items.Add(d2p.ToString("P"));
+            btnClear.Focus();
+
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -51,7 +53,7 @@ namespace FraryFirst_App
             txtDice1.Clear();
             txtDice2.Clear();   
             lstOut.Items.Clear();
-
+            txtDice1.Focus();
         }
     }
 }
