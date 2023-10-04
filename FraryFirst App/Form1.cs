@@ -27,9 +27,18 @@ namespace FraryFirst_App
             //input
             //  txtDice1.Text = "1";
             txtDice2.ForeColor = Color.CadetBlue;
+            /*
+             * Changing parse to tryparse
+                        int dice1 = int.Parse(txtDice1.Text);
+                        int dice2 = int.Parse(txtDice2.Text);
+            */
+            // for tryparse decaration needs to be on a separate statement
+            int dice1, dice2;
+            bool d1Valid, d2Valid;
+            d1Valid = int.TryParse(txtDice1.Text, out dice1);
+            d2Valid = int.TryParse(txtDice2.Text, out dice2);
 
-            int dice1 = int.Parse(txtDice1.Text);
-            int dice2 = int.Parse(txtDice2.Text);
+
             int total = 0;
             total = dice1 + dice2;
             lstOut.Items.Add("Dice 1 is " + txtDice1.Text);
