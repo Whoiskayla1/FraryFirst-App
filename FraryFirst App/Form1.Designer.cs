@@ -43,7 +43,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(330, 34);
+            this.lblTitle.Location = new System.Drawing.Point(241, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(144, 24);
             this.lblTitle.TabIndex = 0;
@@ -52,7 +52,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 88);
+            this.label1.Location = new System.Drawing.Point(46, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 1;
@@ -60,23 +60,25 @@
             // 
             // txtDice1
             // 
-            this.txtDice1.Location = new System.Drawing.Point(139, 88);
+            this.txtDice1.Location = new System.Drawing.Point(142, 65);
             this.txtDice1.Name = "txtDice1";
             this.txtDice1.Size = new System.Drawing.Size(100, 20);
             this.txtDice1.TabIndex = 2;
             // 
             // lstOut
             // 
+            this.lstOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstOut.FormattingEnabled = true;
-            this.lstOut.Location = new System.Drawing.Point(46, 135);
+            this.lstOut.ItemHeight = 20;
+            this.lstOut.Location = new System.Drawing.Point(33, 109);
             this.lstOut.Name = "lstOut";
-            this.lstOut.Size = new System.Drawing.Size(604, 95);
+            this.lstOut.Size = new System.Drawing.Size(604, 164);
             this.lstOut.TabIndex = 5;
             this.lstOut.TabStop = false;
             // 
             // btnDisplay
             // 
-            this.btnDisplay.Location = new System.Drawing.Point(62, 278);
+            this.btnDisplay.Location = new System.Drawing.Point(62, 304);
             this.btnDisplay.Name = "btnDisplay";
             this.btnDisplay.Size = new System.Drawing.Size(75, 23);
             this.btnDisplay.TabIndex = 6;
@@ -86,7 +88,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(282, 278);
+            this.btnClear.Location = new System.Drawing.Point(282, 304);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 7;
@@ -96,7 +98,7 @@
             // 
             // btnQuit
             // 
-            this.btnQuit.Location = new System.Drawing.Point(575, 278);
+            this.btnQuit.Location = new System.Drawing.Point(575, 304);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(75, 23);
             this.btnQuit.TabIndex = 8;
@@ -107,7 +109,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(334, 94);
+            this.label2.Location = new System.Drawing.Point(337, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 3;
@@ -115,7 +117,7 @@
             // 
             // txtDice2
             // 
-            this.txtDice2.Location = new System.Drawing.Point(428, 86);
+            this.txtDice2.Location = new System.Drawing.Point(431, 63);
             this.txtDice2.Name = "txtDice2";
             this.txtDice2.Size = new System.Drawing.Size(100, 20);
             this.txtDice2.TabIndex = 4;
