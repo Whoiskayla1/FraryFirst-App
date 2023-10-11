@@ -12,6 +12,10 @@ namespace FraryFirst_App
 {
     public partial class Form1 : Form
     {
+        private string sides = "";
+        private const string sixSided = "6 Sided";
+        private const string tenSided = "10 Sided";
+        private const string twentySided = "20 sided";
         public Form1()
         {
             InitializeComponent();
@@ -25,6 +29,9 @@ namespace FraryFirst_App
 
         private void btnDisplay_Click(object sender, EventArgs e)
         {
+            int minNum = 1;
+            int maxNum =0;
+
             //input
             //  txtDice1.Text = "1";
 
@@ -51,32 +58,55 @@ namespace FraryFirst_App
 
             if (d1Valid && d2Valid)
             {
+                switch (sides)
+                {
+                    case sixSided:
+                        maxNum= 6;
+                        break;
+                    case tenSided:
+                        maxNum = 10;
+                        break;
+                    case twentySided:
+                        maxNum = 20;
+                        break;
+                    default:
+                        lstOut.Items.Add("this shouldn't happen");
+                        break;
 
-                //Processing
+                }
+                if (dice1 >= minNum && dice1 <= maxNum &&
+                    dice2 >= minNum && dice2 <= maxNum)
+                {
+                    //Processing
 
-                total = dice1 + dice2;
-                //generally I don't want you to combine your processing and output
+                    total = dice1 + dice2;
+                    //generally I don't want you to combine your processing and output
 
-                d1p = (double)dice1 / total;
-                d2p = (double)dice2 / total;
+                    d1p = (double)dice1 / total;
+                    d2p = (double)dice2 / total;
 
-                moneyWon = total * dollarsPerPoint;
+                    moneyWon = total * dollarsPerPoint;
 
-                lstOut.Items.Add("Dice 1 is " + dice1.ToString("N0"));
-                lstOut.Items.Add("Dice 2 is " + dice2.ToString("N0"));
-                lstOut.Items.Add("Amount of money per point is " + dollarsPerPoint.ToString("C"));
+                    lstOut.Items.Add("Dice 1 is " + dice1.ToString("N0"));
+                    lstOut.Items.Add("Dice 2 is " + dice2.ToString("N0"));
+                    lstOut.Items.Add("Amount of money per point is " + dollarsPerPoint.ToString("C"));
 
-                /* C for currency, D for date and T for time */
+                    /* C for currency, D for date and T for time */
 
-                // Output
+                    // Output
 
-                lstOut.Items.Add("Total = " + total.ToString("N0"));
-                lstOut.Items.Add(d1p.ToString("P"));
-                lstOut.Items.Add(d2p.ToString("P"));
-                lstOut.Items.Add("The amount of money won is " + moneyWon.ToString("C"));
+                    lstOut.Items.Add("Total = " + total.ToString("N0"));
+                    lstOut.Items.Add(d1p.ToString("P"));
+                    lstOut.Items.Add(d2p.ToString("P"));
+                    lstOut.Items.Add("The amount of money won is " + moneyWon.ToString("C"));
 
 
-                btnClear.Focus();
+                    btnClear.Focus();
+                } else
+                {
+                    lstOut.Items.Add("At least one of the dice is out of range");
+                }
+
             }// end of if
             else
             {
@@ -101,6 +131,31 @@ namespace FraryFirst_App
             txtDice2.Clear();   
             lstOut.Items.Clear();
             txtDice1.Focus();
+        }
+
+        private void rdo6Sided_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdo6Sided.Checked)
+            {
+                sides = sixSided;
+            }
+                
+        }
+
+        private void rdo10Sidded_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdo10Sidded.Checked)
+            {
+                sides = tenSided;
+            }
+        }
+
+        private void rdo20Sided_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdo20Sided.Checked)
+            {
+                sides = twentySided;
+            }
         }
     }
 }
