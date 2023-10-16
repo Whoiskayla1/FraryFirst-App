@@ -20,10 +20,18 @@ namespace FraryFirst_App
         {
             InitializeComponent();
         }
-
+        // Inclass assignment 7
         private void btnQuit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult buttonSelected;
+
+            buttonSelected = MessageBox.Show("Do you really want to quit?", "Exiting...",
+                MessageBoxButtons.YesNo);
+            if (buttonSelected == DialogResult.Yes)
+            {
+                this.Close();
+            }
+
         }
         
 
@@ -33,7 +41,7 @@ namespace FraryFirst_App
             int maxNum =0;
 
             //input
-            //  txtDice1.Text = "1";
+         
 
             // for tryparse decaration needs to be on a separate statement 
             //generally your declarations should be at the begiining of the procedure
@@ -51,13 +59,16 @@ namespace FraryFirst_App
                         int dice2 = int.Parse(txtDice2.Text);
             */
 
-          //  dice1 = 5;
-
+       
+            // In class Assignment 4
             d1Valid = int.TryParse(txtDice1.Text, out dice1);
             d2Valid = int.TryParse(txtDice2.Text, out dice2);
 
+           // Inclass assignment 5
             if (d1Valid && d2Valid)
             {
+     //           lstOut.Items.Add("Type of die" + sides);
+                // Inclass assignment 7
                 switch (sides)
                 {
                     case sixSided:
@@ -74,6 +85,7 @@ namespace FraryFirst_App
                         break;
 
                 }
+                // Inclass assignment 5
                 if (dice1 >= minNum && dice1 <= maxNum &&
                     dice2 >= minNum && dice2 <= maxNum)
                 {
@@ -133,6 +145,7 @@ namespace FraryFirst_App
             txtDice1.Focus();
         }
 
+        // Inclass assignment 6
         private void rdo6Sided_CheckedChanged(object sender, EventArgs e)
         {
             if (rdo6Sided.Checked)
@@ -144,7 +157,7 @@ namespace FraryFirst_App
 
         private void rdo10Sidded_CheckedChanged(object sender, EventArgs e)
         {
-            if (rdo10Sidded.Checked)
+            if (rdo10Sided.Checked)
             {
                 sides = tenSided;
             }

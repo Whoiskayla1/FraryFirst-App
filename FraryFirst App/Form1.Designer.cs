@@ -38,9 +38,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtDice2 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdo6Sided = new System.Windows.Forms.RadioButton();
-            this.rdo10Sidded = new System.Windows.Forms.RadioButton();
             this.rdo20Sided = new System.Windows.Forms.RadioButton();
+            this.rdo10Sided = new System.Windows.Forms.RadioButton();
+            this.rdo6Sided = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,7 +130,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rdo20Sided);
-            this.groupBox1.Controls.Add(this.rdo10Sidded);
+            this.groupBox1.Controls.Add(this.rdo10Sided);
             this.groupBox1.Controls.Add(this.rdo6Sided);
             this.groupBox1.Location = new System.Drawing.Point(53, 56);
             this.groupBox1.Name = "groupBox1";
@@ -138,30 +138,6 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dice Type";
-            // 
-            // rdo6Sided
-            // 
-            this.rdo6Sided.AutoSize = true;
-            this.rdo6Sided.Location = new System.Drawing.Point(30, 19);
-            this.rdo6Sided.Name = "rdo6Sided";
-            this.rdo6Sided.Size = new System.Drawing.Size(61, 17);
-            this.rdo6Sided.TabIndex = 0;
-            this.rdo6Sided.TabStop = true;
-            this.rdo6Sided.Text = "6 Sided";
-            this.rdo6Sided.UseVisualStyleBackColor = true;
-            this.rdo6Sided.CheckedChanged += new System.EventHandler(this.rdo6Sided_CheckedChanged);
-            // 
-            // rdo10Sidded
-            // 
-            this.rdo10Sidded.AutoSize = true;
-            this.rdo10Sidded.Location = new System.Drawing.Point(214, 19);
-            this.rdo10Sidded.Name = "rdo10Sidded";
-            this.rdo10Sidded.Size = new System.Drawing.Size(67, 17);
-            this.rdo10Sidded.TabIndex = 1;
-            this.rdo10Sidded.TabStop = true;
-            this.rdo10Sidded.Text = "10 Sided";
-            this.rdo10Sidded.UseVisualStyleBackColor = true;
-            this.rdo10Sidded.CheckedChanged += new System.EventHandler(this.rdo10Sidded_CheckedChanged);
             // 
             // rdo20Sided
             // 
@@ -174,6 +150,31 @@
             this.rdo20Sided.Text = "20 Sided";
             this.rdo20Sided.UseVisualStyleBackColor = true;
             this.rdo20Sided.CheckedChanged += new System.EventHandler(this.rdo20Sided_CheckedChanged);
+            // 
+            // rdo10Sided
+            // 
+            this.rdo10Sided.AutoSize = true;
+            this.rdo10Sided.Location = new System.Drawing.Point(214, 19);
+            this.rdo10Sided.Name = "rdo10Sided";
+            this.rdo10Sided.Size = new System.Drawing.Size(67, 17);
+            this.rdo10Sided.TabIndex = 1;
+            this.rdo10Sided.TabStop = true;
+            this.rdo10Sided.Text = "10 Sided";
+            this.rdo10Sided.UseVisualStyleBackColor = true;
+            this.rdo10Sided.CheckedChanged += new System.EventHandler(this.rdo10Sidded_CheckedChanged);
+            // 
+            // rdo6Sided
+            // 
+            this.rdo6Sided.AutoSize = true;
+            this.rdo6Sided.Checked = true;
+            this.rdo6Sided.Location = new System.Drawing.Point(30, 19);
+            this.rdo6Sided.Name = "rdo6Sided";
+            this.rdo6Sided.Size = new System.Drawing.Size(61, 17);
+            this.rdo6Sided.TabIndex = 0;
+            this.rdo6Sided.TabStop = true;
+            this.rdo6Sided.Text = "6 Sided";
+            this.rdo6Sided.UseVisualStyleBackColor = true;
+            this.rdo6Sided.CheckedChanged += new System.EventHandler(this.rdo6Sided_CheckedChanged);
             // 
             // Form1
             // 
@@ -212,7 +213,7 @@
         private System.Windows.Forms.TextBox txtDice2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rdo20Sided;
-        private System.Windows.Forms.RadioButton rdo10Sidded;
+        private System.Windows.Forms.RadioButton rdo10Sided;
         private System.Windows.Forms.RadioButton rdo6Sided;
     }
 }
