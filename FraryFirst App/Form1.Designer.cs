@@ -146,7 +146,6 @@
             this.rdo20Sided.Name = "rdo20Sided";
             this.rdo20Sided.Size = new System.Drawing.Size(67, 17);
             this.rdo20Sided.TabIndex = 2;
-            this.rdo20Sided.TabStop = true;
             this.rdo20Sided.Text = "20 Sided";
             this.rdo20Sided.UseVisualStyleBackColor = true;
             this.rdo20Sided.CheckedChanged += new System.EventHandler(this.rdo20Sided_CheckedChanged);
@@ -158,7 +157,6 @@
             this.rdo10Sided.Name = "rdo10Sided";
             this.rdo10Sided.Size = new System.Drawing.Size(67, 17);
             this.rdo10Sided.TabIndex = 1;
-            this.rdo10Sided.TabStop = true;
             this.rdo10Sided.Text = "10 Sided";
             this.rdo10Sided.UseVisualStyleBackColor = true;
             this.rdo10Sided.CheckedChanged += new System.EventHandler(this.rdo10Sidded_CheckedChanged);
@@ -166,12 +164,10 @@
             // rdo6Sided
             // 
             this.rdo6Sided.AutoSize = true;
-            this.rdo6Sided.Checked = true;
             this.rdo6Sided.Location = new System.Drawing.Point(30, 19);
             this.rdo6Sided.Name = "rdo6Sided";
             this.rdo6Sided.Size = new System.Drawing.Size(61, 17);
             this.rdo6Sided.TabIndex = 0;
-            this.rdo6Sided.TabStop = true;
             this.rdo6Sided.Text = "6 Sided";
             this.rdo6Sided.UseVisualStyleBackColor = true;
             this.rdo6Sided.CheckedChanged += new System.EventHandler(this.rdo6Sided_CheckedChanged);
@@ -193,6 +189,7 @@
             this.Controls.Add(this.lblTitle);
             this.Name = "Form1";
             this.Text = "Test App by Barbara Frary";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

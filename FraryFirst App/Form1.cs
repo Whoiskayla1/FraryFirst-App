@@ -143,6 +143,8 @@ namespace FraryFirst_App
             txtDice2.Clear();   
             lstOut.Items.Clear();
             txtDice1.Focus();
+            // added for ICA 6
+            rdo6Sided.Checked = true;
         }
 
         // Inclass assignment 6
@@ -169,6 +171,13 @@ namespace FraryFirst_App
             {
                 sides = twentySided;
             }
+        }
+
+        // added for ICA 6
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            rdo6Sided.Checked = true;
+         
         }
     }
 }
