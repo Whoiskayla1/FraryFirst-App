@@ -55,8 +55,6 @@ namespace FraryFirst_App
 
             bool numValid;
             int total = 0;
-           // double d1p = 0;
-          //  double d2p = 0;
             double dollarsPerPoint = 10;
             double moneyWon = 0;
             int curDie = 0;
@@ -64,24 +62,16 @@ namespace FraryFirst_App
             StreamWriter sw;
 
 
-           // txtDice2.ForeColor = Color.CadetBlue;
-            /*
-             * Changing parse to tryparse
-                        int dice1 = int.Parse(txtDice1.Text);
-                        int dice2 = int.Parse(txtDice2.Text);
-            */
-
        
             // In class Assignment 4
             numValid = int.TryParse(txtNumDice.Text, out numDice);
 
-            
-            //d2Valid = int.TryParse(txtDice2.Text, out dice2);
+           
 
            // Inclass assignment 5
             if (numValid )
             {
-     //           lstOut.Items.Add("Type of die" + sides);
+   
                 // Inclass assignment 7
                 switch (sides)
                 {
@@ -112,17 +102,10 @@ namespace FraryFirst_App
                 sw.WriteLine("Total is " + total);
                 //Processing
 
-                // ******    total = dice1 + dice2;
-
-                //generally I don't want you to combine your processing and output
-
-                //  d1p = (double)dice1 / total;
-                //   d2p = (double)dice2 / total;
+             
 
                 moneyWon = total * dollarsPerPoint;
 
-                 //   lstOut.Items.Add("Dice 1 is " + dice1.ToString("N0"));
-                  //  lstOut.Items.Add("Dice 2 is " + dice2.ToString("N0"));
                     lstOut.Items.Add("Amount of money per point is " + dollarsPerPoint.ToString("C"));
                 sw.WriteLine("Amount of money per point is " + dollarsPerPoint.ToString("C"));
                 /* C for currency, D for date and T for time */
@@ -130,8 +113,7 @@ namespace FraryFirst_App
                 // Output
 
                 lstOut.Items.Add("Total = " + total.ToString("N0"));
-                 //   lstOut.Items.Add(d1p.ToString("P"));
-                //    lstOut.Items.Add(d2p.ToString("P"));
+               
                     lstOut.Items.Add("The amount of money won is " + moneyWon.ToString("C"));
 
                 sw.WriteLine("The amount of money won is " + moneyWon.ToString("C"));
