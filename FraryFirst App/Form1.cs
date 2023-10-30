@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,10 @@ namespace FraryFirst_App
         private const string sixSided = "6 Sided";
         private const string tenSided = "10 Sided";
         private const string twentySided = "20 sided";
+        private Random rnd;
+        private string diceFileLog = "diceFile.log";
+
+
         public Form1()
         {
             InitializeComponent();
@@ -41,18 +46,25 @@ namespace FraryFirst_App
             int maxNum =0;
 
             //input
-         
+
 
             // for tryparse decaration needs to be on a separate statement 
             //generally your declarations should be at the begiining of the procedure
-            int dice1, dice2;
-            bool d1Valid, d2Valid;
+            //   int dice1, dice2;
+            int numDice;
+
+            bool numValid;
             int total = 0;
-            double d1p = 0;
-            double d2p = 0;
+           // double d1p = 0;
+          //  double d2p = 0;
             double dollarsPerPoint = 10;
             double moneyWon = 0;
-            txtDice2.ForeColor = Color.CadetBlue;
+            int curDie = 0;
+
+            StreamWriter sw;
+
+
+           // txtDice2.ForeColor = Color.CadetBlue;
             /*
              * Changing parse to tryparse
                         int dice1 = int.Parse(txtDice1.Text);
@@ -61,11 +73,13 @@ namespace FraryFirst_App
 
        
             // In class Assignment 4
-            d1Valid = int.TryParse(txtDice1.Text, out dice1);
-            d2Valid = int.TryParse(txtDice2.Text, out dice2);
+            numValid = int.TryParse(txtNumDice.Text, out numDice);
+
+            
+            //d2Valid = int.TryParse(txtDice2.Text, out dice2);
 
            // Inclass assignment 5
-            if (d1Valid && d2Valid)
+            if (numValid )
             {
      //           lstOut.Items.Add("Type of die" + sides);
                 // Inclass assignment 7
@@ -85,41 +99,52 @@ namespace FraryFirst_App
                         break;
 
                 }
-                // Inclass assignment 5
-                if (dice1 >= minNum && dice1 <= maxNum &&
-                    dice2 >= minNum && dice2 <= maxNum)
+                sw = File.AppendText(diceFileLog);
+
+                for (int i = 0; i < numDice; i++)
                 {
-                    //Processing
+                    curDie = rnd.Next(minNum, maxNum+1);
+                    total = total + curDie;
+                    lstOut.Items.Add("Current Die rolled is: " + curDie);
+                    sw.WriteLine("Current Die rolled is: " + curDie);
+                }
+                lstOut.Items.Add("Total is " + total);
+                sw.WriteLine("Total is " + total);
+                //Processing
 
-                    total = dice1 + dice2;
-                    //generally I don't want you to combine your processing and output
+                // ******    total = dice1 + dice2;
 
-                    d1p = (double)dice1 / total;
-                    d2p = (double)dice2 / total;
+                //generally I don't want you to combine your processing and output
 
-                    moneyWon = total * dollarsPerPoint;
+                //  d1p = (double)dice1 / total;
+                //   d2p = (double)dice2 / total;
 
-                    lstOut.Items.Add("Dice 1 is " + dice1.ToString("N0"));
-                    lstOut.Items.Add("Dice 2 is " + dice2.ToString("N0"));
+                moneyWon = total * dollarsPerPoint;
+
+                 //   lstOut.Items.Add("Dice 1 is " + dice1.ToString("N0"));
+                  //  lstOut.Items.Add("Dice 2 is " + dice2.ToString("N0"));
                     lstOut.Items.Add("Amount of money per point is " + dollarsPerPoint.ToString("C"));
+                sw.WriteLine("Amount of money per point is " + dollarsPerPoint.ToString("C"));
+                /* C for currency, D for date and T for time */
 
-                    /* C for currency, D for date and T for time */
+                // Output
 
-                    // Output
-
-                    lstOut.Items.Add("Total = " + total.ToString("N0"));
-                    lstOut.Items.Add(d1p.ToString("P"));
-                    lstOut.Items.Add(d2p.ToString("P"));
+                lstOut.Items.Add("Total = " + total.ToString("N0"));
+                 //   lstOut.Items.Add(d1p.ToString("P"));
+                //    lstOut.Items.Add(d2p.ToString("P"));
                     lstOut.Items.Add("The amount of money won is " + moneyWon.ToString("C"));
 
+                sw.WriteLine("The amount of money won is " + moneyWon.ToString("C"));
+                sw.Close();
 
-                    btnClear.Focus();
+                btnClear.Focus();
                 } else
                 {
                     lstOut.Items.Add("At least one of the dice is out of range");
                 }
 
-            }// end of if
+        //    }// end of if
+        /*
             else
             {
                 if (!d1Valid)
@@ -132,17 +157,17 @@ namespace FraryFirst_App
                 }
                 
             }
-
+        */
               
 
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtDice1.Clear();
-            txtDice2.Clear();   
+            txtNumDice.Clear();
+          //  txtDice2.Clear();   
             lstOut.Items.Clear();
-            txtDice1.Focus();
+            txtNumDice.Focus();
             // added for ICA 6
             rdo6Sided.Checked = true;
         }
@@ -176,7 +201,10 @@ namespace FraryFirst_App
         // added for ICA 6
         private void Form1_Load(object sender, EventArgs e)
         {
+            // creates the random object along with the random numbers 
+            rnd = new Random();
             rdo6Sided.Checked = true;
+
          
         }
     }
