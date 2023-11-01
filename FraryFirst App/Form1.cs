@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +14,11 @@ namespace FraryFirst_App
 {
     public partial class Form1 : Form
     {
+       
+
+        //This is the object based on the second form 
+        SettingsForm sf = new SettingsForm();
+
         private string sides = "";
         private const string sixSided = "6 Sided";
         private const string tenSided = "10 Sided";
@@ -38,45 +44,40 @@ namespace FraryFirst_App
             }
 
         }
-        
+
 
         private void btnDisplay_Click(object sender, EventArgs e)
         {
             int minNum = 1;
-            int maxNum =0;
-
-            //input
-
-
-            // for tryparse decaration needs to be on a separate statement 
-            //generally your declarations should be at the begiining of the procedure
-            //   int dice1, dice2;
+            int maxNum = 0;
             int numDice;
 
             bool numValid;
             int total = 0;
-            double dollarsPerPoint = 10;
+            // This value now refers to the value in the settings Form
+            double dollarsPerPoint = sf.DollarsPerPoint;
+
             double moneyWon = 0;
             int curDie = 0;
 
-            StreamWriter sw;
-
-
-       
+            /* This is how you decalre a stream writer which will allow you to write to a file */
+                   StreamWriter sw;
+            
+            //Input
             // In class Assignment 4
             numValid = int.TryParse(txtNumDice.Text, out numDice);
 
-           
+            //Processing
 
-           // Inclass assignment 5
-            if (numValid )
+            // Inclass assignment 5
+            if (numValid)
             {
-   
+
                 // Inclass assignment 7
                 switch (sides)
                 {
                     case sixSided:
-                        maxNum= 6;
+                        maxNum = 6;
                         break;
                     case tenSided:
                         maxNum = 10;
@@ -89,65 +90,52 @@ namespace FraryFirst_App
                         break;
 
                 }
+                //OPen the log file
                 sw = File.AppendText(diceFileLog);
 
                 for (int i = 0; i < numDice; i++)
                 {
-                    curDie = rnd.Next(minNum, maxNum+1);
+                    curDie = rnd.Next(minNum, maxNum + 1);
                     total = total + curDie;
+                    // since I am not saving curDie I have to output it here 
                     lstOut.Items.Add("Current Die rolled is: " + curDie);
                     sw.WriteLine("Current Die rolled is: " + curDie);
-                }
-                lstOut.Items.Add("Total is " + total);
-                sw.WriteLine("Total is " + total);
-                //Processing
-
-             
+                }            
 
                 moneyWon = total * dollarsPerPoint;
 
-                    lstOut.Items.Add("Amount of money per point is " + dollarsPerPoint.ToString("C"));
+
+                // Output
+                lstOut.Items.Add("Amount of money per point is " + dollarsPerPoint.ToString("C"));
                 sw.WriteLine("Amount of money per point is " + dollarsPerPoint.ToString("C"));
                 /* C for currency, D for date and T for time */
 
-                // Output
+              
 
                 lstOut.Items.Add("Total = " + total.ToString("N0"));
-               
-                    lstOut.Items.Add("The amount of money won is " + moneyWon.ToString("C"));
 
+                lstOut.Items.Add("The amount of money won is " + moneyWon.ToString("C"));
+
+                sw.WriteLine("Total is " + total.ToString("N0"));
                 sw.WriteLine("The amount of money won is " + moneyWon.ToString("C"));
                 sw.Close();
 
                 btnClear.Focus();
-                } else
-                {
-                    lstOut.Items.Add("At least one of the dice is out of range");
-                }
-
-        //    }// end of if
-        /*
-            else
-            {
-                if (!d1Valid)
-                {
-                    lstOut.Items.Add("Dice 1 input is invalid");
-                }
-                if (!d2Valid) {
-
-                    lstOut.Items.Add("Dice 2 input is invalid");
-                }
-                
             }
-        */
-              
+            else // Number of dice is not valid
+            {
+                lstOut.Items.Add("The number of dice must be a whole number");
+            }
+
+
+
 
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtNumDice.Clear();
-          //  txtDice2.Clear();   
+            //  txtDice2.Clear();   
             lstOut.Items.Clear();
             txtNumDice.Focus();
             // added for ICA 6
@@ -161,7 +149,7 @@ namespace FraryFirst_App
             {
                 sides = sixSided;
             }
-                
+
         }
 
         private void rdo10Sidded_CheckedChanged(object sender, EventArgs e)
@@ -187,7 +175,12 @@ namespace FraryFirst_App
             rnd = new Random();
             rdo6Sided.Checked = true;
 
-         
+
+        }
+
+        private void setDollarsPerPointToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sf.Show();
         }
     }
 }

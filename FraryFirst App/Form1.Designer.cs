@@ -39,7 +39,11 @@
             this.rdo20Sided = new System.Windows.Forms.RadioButton();
             this.rdo10Sided = new System.Windows.Forms.RadioButton();
             this.rdo6Sided = new System.Windows.Forms.RadioButton();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setDollarsPerPointToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -154,6 +158,31 @@
             this.rdo6Sided.UseVisualStyleBackColor = true;
             this.rdo6Sided.CheckedChanged += new System.EventHandler(this.rdo6Sided_CheckedChanged);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(742, 24);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.setDollarsPerPointToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // setDollarsPerPointToolStripMenuItem
+            // 
+            this.setDollarsPerPointToolStripMenuItem.Name = "setDollarsPerPointToolStripMenuItem";
+            this.setDollarsPerPointToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.setDollarsPerPointToolStripMenuItem.Text = "Set Dollars Per Point";
+            this.setDollarsPerPointToolStripMenuItem.Click += new System.EventHandler(this.setDollarsPerPointToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AcceptButton = this.btnDisplay;
@@ -168,11 +197,15 @@
             this.Controls.Add(this.txtNumDice);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Test App by Barbara Frary";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,6 +224,9 @@
         private System.Windows.Forms.RadioButton rdo20Sided;
         private System.Windows.Forms.RadioButton rdo10Sided;
         private System.Windows.Forms.RadioButton rdo6Sided;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem setDollarsPerPointToolStripMenuItem;
     }
 }
 
