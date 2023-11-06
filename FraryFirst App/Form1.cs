@@ -48,6 +48,11 @@ namespace FraryFirst_App
 
         private void btnDisplay_Click(object sender, EventArgs e)
         {
+            //ICA 8
+            // store the current time in curTime
+            DateTime curTime = DateTime.Now;
+
+
             int minNum = 1;
             int maxNum = 0;
             int numDice;
@@ -92,7 +97,8 @@ namespace FraryFirst_App
                 }
                 //OPen the log file
                 sw = File.AppendText(diceFileLog);
-
+                sw.WriteLine("******** Transaction Began at " + curTime.ToString("d") + 
+                                " at " + curTime.ToString("T") + " ********");
                 for (int i = 0; i < numDice; i++)
                 {
                     curDie = rnd.Next(minNum, maxNum + 1);
@@ -120,6 +126,13 @@ namespace FraryFirst_App
                 sw.WriteLine("The amount of money won is " + moneyWon.ToString("C"));
                 sw.Close();
 
+                // this is not required for preoject it is just a demo of the timedate to string methods
+                lstOut.Items.Add("curTime.ToString(\"D\") " + curTime.ToString("D"));
+                lstOut.Items.Add("curTime.ToString(\"d\") " + curTime.ToString("d"));
+                lstOut.Items.Add("curTime.ToString(\"T\") " + curTime.ToString("T"));
+                lstOut.Items.Add("curTime.ToString(\"t\") " + curTime.ToString("t"));
+                lstOut.Items.Add("curTime.ToString(\"G\") " + curTime.ToString("G"));
+                lstOut.Items.Add("curTime.ToString(\"g\") " + curTime.ToString("g"));
                 btnClear.Focus();
             }
             else // Number of dice is not valid
