@@ -24,7 +24,7 @@ namespace FraryFirst_App
         private const string tenSided = "10 Sided";
         private const string twentySided = "20 sided";
         private Random rnd;
-        private string diceFileLog = "diceFile.log";
+        private string diceFileLog = "diceFilelog.txt";
 
 
         public Form1()
