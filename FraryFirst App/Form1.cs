@@ -15,7 +15,7 @@ namespace FraryFirst_App
     public partial class Form1 : Form
     {
        
-
+         
         //This is the object based on the second form 
         SettingsForm sf = new SettingsForm();
 
