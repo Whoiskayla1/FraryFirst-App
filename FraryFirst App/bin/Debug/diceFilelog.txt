@@ -69,3 +69,15 @@ Current Die rolled is: 5
 Amount of money per point is $0.00
 Total is 230
 The amount of money won is $0.00
+******** Transaction Began at 11/8/2023 at 10:57:09 AM ********
+Current Die rolled is: 4
+Current Die rolled is: 5
+Amount of money per point is $0.00
+Total is 9
+The amount of money won is $0.00
+******** Transaction Began at 11/8/2023 at 11:04:17 AM ********
+Current Die rolled is: 8
+Current Die rolled is: 5
+Amount of money per point is $13.00
+Total is 13
+The amount of money won is $169.00

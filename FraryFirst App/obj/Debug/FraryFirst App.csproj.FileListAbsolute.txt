@@ -10,3 +10,15 @@ C:\Users\bfrary\source\repos\Prof-Frary\FraryFirst-App\FraryFirst App\obj\Debug\
 C:\Users\bfrary\source\repos\Prof-Frary\FraryFirst-App\FraryFirst App\obj\Debug\FraryFirst App.csproj.CoreCompileInputs.cache
 C:\Users\bfrary\source\repos\Prof-Frary\FraryFirst-App\FraryFirst App\obj\Debug\FraryFirst App.exe
 C:\Users\bfrary\source\repos\Prof-Frary\FraryFirst-App\FraryFirst App\obj\Debug\FraryFirst App.pdb
+C:\Users\Student\source\repos\Prof-Frary\FraryFirst-App\FraryFirst App\bin\Debug\FraryFirst App.exe.config
+C:\Users\Student\source\repos\Prof-Frary\FraryFirst-App\FraryFirst App\bin\Debug\FraryFirst App.exe
+C:\Users\Student\source\repos\Prof-Frary\FraryFirst-App\FraryFirst App\bin\Debug\FraryFirst App.pdb
+C:\Users\Student\source\repos\Prof-Frary\FraryFirst-App\FraryFirst App\obj\Debug\FraryFirst App.csproj.AssemblyReference.cache
+C:\Users\Student\source\repos\Prof-Frary\FraryFirst-App\FraryFirst App\obj\Debug\FraryFirst App.csproj.SuggestedBindingRedirects.cache
+C:\Users\Student\source\repos\Prof-Frary\FraryFirst-App\FraryFirst App\obj\Debug\FraryFirst_App.Form1.resources
+C:\Users\Student\source\repos\Prof-Frary\FraryFirst-App\FraryFirst App\obj\Debug\FraryFirst_App.SettingsForm.resources
+C:\Users\Student\source\repos\Prof-Frary\FraryFirst-App\FraryFirst App\obj\Debug\FraryFirst_App.Properties.Resources.resources
+C:\Users\Student\source\repos\Prof-Frary\FraryFirst-App\FraryFirst App\obj\Debug\FraryFirst App.csproj.GenerateResource.cache
+C:\Users\Student\source\repos\Prof-Frary\FraryFirst-App\FraryFirst App\obj\Debug\FraryFirst App.csproj.CoreCompileInputs.cache
+C:\Users\Student\source\repos\Prof-Frary\FraryFirst-App\FraryFirst App\obj\Debug\FraryFirst App.exe
+C:\Users\Student\source\repos\Prof-Frary\FraryFirst-App\FraryFirst App\obj\Debug\FraryFirst App.pdb
