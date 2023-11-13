@@ -76,6 +76,7 @@
             // 
             this.lstOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstOut.FormattingEnabled = true;
+            this.lstOut.HorizontalScrollbar = true;
             this.lstOut.ItemHeight = 20;
             this.lstOut.Location = new System.Drawing.Point(44, 202);
             this.lstOut.Name = "lstOut";

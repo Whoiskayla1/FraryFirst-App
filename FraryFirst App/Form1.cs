@@ -14,11 +14,14 @@ namespace FraryFirst_App
 {
     public partial class Form1 : Form
     {
-       
-         
-        //This is the object based on the second form 
-        SettingsForm sf = new SettingsForm();
 
+
+        //This is the object based on the second form 
+
+        //  SettingsForm sf = new SettingsForm();
+
+        public SettingsForm sf;
+        
         private string sides = "";
         private const string sixSided = "6 Sided";
         private const string tenSided = "10 Sided";
@@ -183,11 +186,38 @@ namespace FraryFirst_App
 
         // added for ICA 6
         private void Form1_Load(object sender, EventArgs e)
+
         {
+            StreamReader sr;
             // creates the random object along with the random numbers 
             rnd = new Random();
             rdo6Sided.Checked = true;
 
+            // this is so form2 doesn't get created until Form1 is completely created
+            sf = new SettingsForm();
+
+            try
+            {
+                // get he values from the file and set the form 2 properties
+                sr = File.OpenText(sf.ConfigValues);
+                // anything read from a text file is a string
+                string temp = sr.ReadLine();
+                double dpp;
+                bool dppValid = double.TryParse(temp, out dpp);
+                if (dppValid)
+                {
+                    sf.DollarsPerPoint = dpp;
+
+                }
+
+
+                sr.Close();
+
+            } catch (FileNotFoundException ex)
+            {
+                string msg = ex.Message;
+                lstOut.Items.Add(msg);
+            }
 
         }
 
