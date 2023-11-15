@@ -188,38 +188,58 @@ namespace FraryFirst_App
         private void Form1_Load(object sender, EventArgs e)
 
         {
+            bool fileGood = false;
+            // declares the streamreadr variable
             StreamReader sr;
             // creates the random object along with the random numbers 
             rnd = new Random();
+            // set the delut radio button to be checked
             rdo6Sided.Checked = true;
 
             // this is so form2 doesn't get created until Form1 is completely created
             sf = new SettingsForm();
-
-            try
+            do
             {
-                // get he values from the file and set the form 2 properties
-                sr = File.OpenText(sf.ConfigValues);
-                // anything read from a text file is a string
-                string temp = sr.ReadLine();
-                double dpp;
-                bool dppValid = double.TryParse(temp, out dpp);
-                if (dppValid)
+                // get the values from the file and set the form 2 properties
+                try
                 {
-                    sf.DollarsPerPoint = dpp;
+                    // open the file to read it
+                    sr = File.OpenText(sf.ConfigValues);
+                    fileGood = true;    
+                    // anything read from a text file is a string
+                   // string temp = ;
+                    double dpp;
+                    //validate the value just read in
+                    bool dppValid = double.TryParse(sr.ReadLine(),
+                        out dpp);
+                    if (dppValid)
+                    {
+                        // if valid then save value to the property
+                        sf.DollarsPerPoint = dpp;
+
+                    }
+                    else
+                    {
+                        // not doing anything here yet
+                    }
+
+
+                    sr.Close();
 
                 }
+                catch (FileNotFoundException ex)
+                {
+                    string msg = ex.Message + " Please enter a new file.";
+                    //   lstOut.Items.Add(msg);
+                    MessageBox.Show(msg, "File not Found");
+                    // allows the user to pick a file
+                    openFileDialog1.ShowDialog(this);
+                    //filename get put in openFileDialog1.Filename
+                    sf.ConfigValues = openFileDialog1.FileName;
+                } //End of catch
+            } while (!fileGood);  // end of do 
 
-
-                sr.Close();
-
-            } catch (FileNotFoundException ex)
-            {
-                string msg = ex.Message;
-                lstOut.Items.Add(msg);
-            }
-
-        }
+        } // end of form1 load event
 
         private void setDollarsPerPointToolStripMenuItem_Click(object sender, EventArgs e)
         {
